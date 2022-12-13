@@ -6,6 +6,7 @@ const route = require('./routes')
 const methodOverride = require('method-override')
 const app = express()
 const port = 5000;
+const host = '0.0.0.0'
 const db = require('./config/db')
 
 db.connect();
@@ -33,8 +34,5 @@ app.use(methodOverride('_method'))
 route(app)
 
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-  // })tening on port ${port}`)
-  // })tening on port ${port}`)
-})
+app.listen(port, host);
+console.log(`running on http://${host}:${port}`);
