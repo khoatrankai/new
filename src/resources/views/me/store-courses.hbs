@@ -1,0 +1,27 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">name</th>
+      <th scope="col">img</th>
+      <th scope="col">price</th>
+      {{!-- <th scope="col">Link</th> --}}
+      
+    </tr>
+  </thead>
+  <tbody>
+    {{#each courses}}
+    <tr>
+      <th scope="row">{{sum @index 1}}</th>
+      <td>{{this.name}}</td>
+      <td>{{this.img}}</td>
+      <td>{{this.price}}</td>
+      <td>
+        <a href="/me/courses/{{this._id}}/edit">Sửa</a>
+        <a href="/me/courses/{{this._id}}/delete" class="btn btn-link">Xóa</a>
+        </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
